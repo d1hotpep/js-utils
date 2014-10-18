@@ -6,3 +6,11 @@ String.prototype.capitalizeWords = function() {
   
   return words.join(' ');
 }
+
+String.prototype.format = function() {
+  var formatted = this;
+    for (var arg in arguments) {
+      formatted = formatted.replace(/%[sd]/, arguments[arg]);
+    }
+    return formatted;
+};
